@@ -1,2 +1,3 @@
 # AngularJS
-关于angularJS1的demo
+# 认识AngularJS
+## 数据绑定
