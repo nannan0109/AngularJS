@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+<!--currency过滤器将数字格式化为货币格式-->
+<div ng-app="myApp" ng-controller="costCtrl">
+    <p><input type="number" ng-model="quantity"></p>
+    <p><input type="number" ng-model="price"></p>
+    <p>总价={{(quantity*price)|currency}}</p>
+</div>
+<script>
+
+</script>
+</body>
+</html>

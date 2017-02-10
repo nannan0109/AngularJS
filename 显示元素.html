@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script src="personController.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="personCtrl">
+    <p><button ng-click="toggle()">隐藏/显示</button></p>
+    <p ng-show="myVar">
+        名：<input type="text" ng-model="firstname"><br>
+        姓名：<input type="text" ng-model="lastname"><br>
+        全名：{{firstname+""+lastname}}
+    </p>
+</div>
+<script>
+    var app=angualr.module('myApp',[]);
+    app.controller('personCtrl',function ($scope) {
+        $scope.firstname="John",
+                $scope.lastname="Doe"
+        $scope.myVar=true;
+        $scope.toggle=function () {
+            $scope.myVar=!$scope.myVar;
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        //AngularJS $timeout服务对应了JS window.setTimeout函数
+        var app= angular.module('myApp',[]);
+        app.controller('myCtrl',function ($scope,$timeout) {
+            $scope.myHeader="Hello World!";
+            $timeout(function () {
+                $scope.myHeader="How are you today?";
+            },2000);
+        });
+    </script>
+</head>
+<body>
+<!--先显示hello world两秒之后显示how are you today-->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{myHeader}}</p>
+</div>
+</body>
+</html>

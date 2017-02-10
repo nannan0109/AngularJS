@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="mySwitch=true">
+    <p>
+        <button ng-disabled="mySwitch">点我</button>
+    </p>
+    <p>
+        <input type="checkbox" ng-model="mySwitch">按钮
+    </p>
+    <p>{{mySwitch}}</p>
+    <!--实例讲解：
+    ng-disabled指令绑定应用程序数据“mySwitch”到HTML的disabled属性
+    ng-model指令绑定“mySwitch”到HTML input checkbox元素的内容
+    如果mySwitch为true，按钮将不可用-->
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table,th,td{
+            border:1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd){
+            background-color: #F1F1F1;
+        }
+        table tr:nth-child(even){
+            background-color: #FFFFFF;
+        }
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="namesController.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="namesStrl">
+    <table>
+        <tr ng-repeat="x in names">
+            <!--显示序号-->
+            <td>{{$index+1}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.country}}</td>
+
+        </tr>
+    </table>
+    <!--使用$even和$odd-->
+    <table>
+        <tr ng-repeat="x in names">
+            <td ng-if="$odd" style="background-color: #F1F1F1">{{x.name}}</td>
+            <td ng-if="$even">{{x.name}}</td>
+            <td ng-if="$odd" style="background-color: #F1F1F1">{{x.country}}</td>
+            <td ng-if="$even">{{x.country}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

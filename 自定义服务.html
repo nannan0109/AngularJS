@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        //可以创建访问自定义服务，链接到你的模块中
+        //创建名为hexafy的访问
+        var app=angular.module('myApp',[]);
+        app.service('hexafy',function () {
+            this.myFunc=function (x) {
+                return x.toString(16);
+            }
+        });
+        app.constructor('myCtrl',function ($scope,hexafy) {
+            $scope.hex=hexafy.myFunc(255);
+        })
+    </script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{hex}}</p>
+</div>
+</body>
+</html>

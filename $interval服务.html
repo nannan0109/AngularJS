@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        //AngularJS $interval服务对应了JS window.setInterval函数
+        var app=angular.module('myApp',[]);
+        app.controller('myCtrl',function ($scope,$interval) {
+            $scope.theTime=new Date().toLocaleTimeString();
+            $interval(function () {
+                $scope.theTime=new Date().toLocaleTimeString();
+            },1000);
+        });
+    </script>
+</head>
+<body>
+<!--显示当前时间-->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{theTime}}</p>
+</div>
+</body>
+</html>

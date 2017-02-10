@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script src="personController.js"></script>
+</head>
+<body>
+<!--应用解析：
+第一部分personController与控制器章节类似
+应用有一个默认属性：$scope.myVar=false;
+ng-hide指令设置<p>元素及两个输入域是否可见，根据myVar的值（true或false）来设置是否可见
+toggle()函数用于切换myVar变量的值（true和false）
+ng-hide="true"让元素不可见-->
+<div ng-app="myApp" ng-controller="personCtrl">
+    <p><button ng-click="toggle()">隐藏/显示</button></p>
+    <p ng-hide="myVar">
+        名：<input type="text" ng-model="firstname"><br>
+        姓名：<input type="text" ng-model="lastname"><br>
+        全名：{{firstname+""+lastname}}
+    </p>
+</div>
+<script>
+    var app=angualr.module('myApp',[]);
+    app.controller('personCtrl',function ($scope) {
+        $scope.firstname="John",
+                $scope.lastname="Doe"
+        $scope.myVar=false;
+        $scope.toggle=function () {
+            $scope.myVar=!$scope.myVar;
+        };
+    });
+</script>
+</body>
+
+</html>
