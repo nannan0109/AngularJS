@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS应用</title>
+</head>
+<body>
+    <!--应用解析：
+    AngularJS应用程序由ng-app定义，应用程序在<div>内运行。ng-controller="myCtrl"属性是一个AngularJS指令。用于定义一个控制器
+    myCtrl函数是一个js函数。AngularJS使用$scope对象来调用控制器。
+    在AngularJS中，$scope是一个应用项（属于应用变量和函数的）
+    控制器的$scope(相当于作用域、控制范围)用来保存AngularJS Model的对象
+    控制器在作用域中创建了两个属性（firstname和lastname）
+    ng-model指令绑定输入域到控制器的属性（firstname和lastname）-->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        名：<input type="text" ng-model="firstname"><br>
+        姓：<input type="text" ng-model="lastname"><br>
+        姓名：{{firstname+""+lastname}}
+
+    </div>
+    <script src="angular.min.js"></script>
+    <script>
+//        AngularJS模块定义应用
+        var app=angular.module('myApp',[]);
+//        控制器控制应用
+        app.controller('myCtrl',function ($scope) {
+            $scope.firstname='John';
+            $scope.lastname="Doe";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+<!--在大型的应用程序中，通常是把控制器存储在外部文件中
+只需要把<script>中的代码复制到名为personController.js的外部文件中即可-->
+    <div ng-app="myApp" ng-controller="personCtrl">
+        <p>姓：<input type="text" ng-model="firstname"></p>
+        <p>名：<input type="text" ng-model="lastname"></p>
+        <p>姓名：{{firstname+""+lastname}}</p>
+    </div>
+<script src="personController.js"></script>
+</body>
+</html>

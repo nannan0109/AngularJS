@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--控制器中的属性对应了视图上的属性-->
+<!--当在控制器中添加$scope对象时，视图可以获取了这些属性
+视图中，不需要添加$scope前缀，只需要添加属性名即可，如：{{carname}}-->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <h1>{{carname}}</h1>
+</div>
+<script src="angular.min.js"></script>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope) {
+        $scope.carname="Volvo";
+    });
+</script>
+</body>
+</html>

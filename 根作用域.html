@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--所有的应用都有一个$rootScope,它可以作用在ng-app指令包含的所有HTML元素中。
+$rootScope可作用于整个应用中，是各个controller中scope的桥梁。用rootScope定义的值，可以在各个controller中使用-->
+<!--创建控制器时，将$rootScope作为参数传递，可在应用中使用-->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <h1>{{lastname}}家族成员：</h1>
+    <ul>
+        <li ng-repeat="x in names">{{x}}{{lastname}}</li>
+    </ul>
+</div>
+<script src="angular.min.js"></script>
+<script>
+    var app=angular.module('myApp',[]);
+
+    app.controller('myCtrl',function ($scope,$rootScope) {
+        $scope.names=["Eils","Tims","Marys"];
+        $rootScope.lastname="Refsnes";
+    });
+</script>
+</body>
+</html>

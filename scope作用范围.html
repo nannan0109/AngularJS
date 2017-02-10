@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--当我们使用ng-repeat指令时，每个重复项都访问了当前的重复对象-->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <ul>
+        <!--把names里的每个元素都读取出来-->
+        <li ng-repeat="x in names">{{x}}</li>
+
+    </ul>
+</div>
+<script src="angular.min.js"></script>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope) {
+        $scope.names=["Emil","Toms","Linas"];
+    });
+</script>
+</body>
+</html>
